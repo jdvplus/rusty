@@ -24,13 +24,13 @@ fn main() {
             println!("value of x in inner scope: {x}");
         }
 
-        println!("value of x in outer scope: {x}")
+        println!("value of x in outer scope: {x}");
     }
 
     fn exercise4() {
         let spaces = "     ";
         let spaces = spaces.len(); // shadowing allows type changing!
-        println!("spaces: {spaces}")
+        println!("spaces: {spaces}");
 
         // below 
         let mut dashes = "----";
