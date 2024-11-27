@@ -1,5 +1,5 @@
 fn main() {
-    fn exercise1() {
+    fn reassignment() {
         let x = 5;
         println!("value of x: {x}");
         
@@ -7,7 +7,7 @@ fn main() {
         println!("value of x: {x}");        
     }
 
-    fn exercise2() {
+    fn mutability() {
         let mut x = 5;
         println!("value of x: {x}");
 
@@ -15,7 +15,7 @@ fn main() {
         println!("value of x: {x}");
     }
 
-    fn exercise3() {
+    fn scope() {
         let x = 5;
         let x = x + 1;
 
@@ -27,12 +27,11 @@ fn main() {
         println!("value of x in outer scope: {x}");
     }
 
-    fn exercise4() {
+    fn shadowing() {
         let spaces = "     ";
         let spaces = spaces.len(); // shadowing allows type changing!
         println!("spaces: {spaces}");
 
-        // below 
         let mut dashes = "----";
         // dashes = dashes.len(); // -> results in compile-time error
         dashes = "some string"; // reassignment within same type is okay
