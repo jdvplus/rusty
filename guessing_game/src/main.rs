@@ -9,21 +9,26 @@ fn main() {
 
     println!("the secret number is {secret_number}");
 
-    println!("please input your guess.");
+    loop {
+        println!("please input your guess.");
 
-    let mut guess = String::new(); // create new instance of mutable string 'guess'
+        let mut guess = String::new(); // create new instance of mutable string 'guess'
 
-    io::stdin()
-        .read_line(&mut guess) // append user input to 'guess' (mutable)
-        .expect("failed to read line"); // error handling
+        io::stdin()
+            .read_line(&mut guess) // append user input to 'guess' (mutable)
+            .expect("failed to read line."); // error handling
 
-    let guess: u32 = guess.trim().parse().expect("please type a number");
+        let guess: u32 = guess.trim().parse().expect("please type a number.");
 
-    println!("you guessed {guess}");
+        println!("you guessed {guess}");
 
-    match guess.cmp(&secret_number) {
-        Ordering::Less => println!("too small!"),
-        Ordering::Greater => println!("too big!"),
-        Ordering::Equal => println!("congratulations!! you win"),
+        match guess.cmp(&secret_number) {
+            Ordering::Less => println!("too small!"),
+            Ordering::Greater => println!("too big!"),
+            Ordering::Equal => {
+                println!("congratulations! you win.");
+                break;
+            }
+        }
     }
 }
